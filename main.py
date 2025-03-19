@@ -17,10 +17,15 @@ dt = 0
 updatable = pygame.sprite.Group()
 drawable = pygame.sprite.Group()
 asteroids = pygame.sprite.Group()
-Asteroid.containers = (updatable, drawable)
+asteroid_field = pygame.sprite.Group()
+
+
+
+AsteroidField.containers = (updatable)
+Asteroid.containers = (asteroids, updatable, drawable)
 Player.containers = (updatable, drawable)
 player = Player(x=SCREEN_WIDTH/2, y=SCREEN_HEIGHT/2)
-
+asteroid_fields = AsteroidField()
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
