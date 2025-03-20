@@ -40,7 +40,10 @@ while running:
         if i.collison(player):
             print('Game over!')
             # sys.exit(0)
-
+        for s in shots:
+            if i.collison(s):
+                s.kill()
+                i.split() 
     screen.fill('black')
     for obj in drawable:
         obj.draw(screen)
